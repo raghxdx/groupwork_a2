@@ -20,3 +20,7 @@ class Doctor:
 #we then create a Appointment class showing attributes the appointment can have 
 class Appointment:
     def __init__(self, patient, doctor, appointment_date): #this line define the constructor for the class Appointment with all its attributes 
+#after that we intalize the attributes of class Appointment 
+        self.patient = patient
+        self.doctor = doctor
+        self.appointment_date = appointment_date
