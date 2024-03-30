@@ -1,3 +1,16 @@
 #we start by creating a class patient with all the details/attributes a patient can have  
 class Patient:
-    def __init__(self, name, age, medical_history, current_condition): #this is the constrctur for the class patient along its attributes 
+    def __init__(self, name, age, medical_history, current_condition): #this is the constrctur for the class Patient along its attributes 
+#then we intalize the class Patient attributes 
+        self.name = name
+        self.age = age
+        self.medical_history = medical_history
+        self.current_condition = current_condition
+
+
+#we create the class Doctor with all  the details/attributes a doctor can have 
+class Doctor:
+    def __init__(self, name, specialization): #this is the constrctur for the class Doctor along its attributes 
+#then we intalize the class Doctor attributes 
+        self.name = name
+        self.specialization = specialization
