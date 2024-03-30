@@ -14,3 +14,9 @@ class Doctor:
 #then we intalize the class Doctor attributes 
         self.name = name
         self.specialization = specialization
+
+
+
+#we then create a Appointment class showing attributes the appointment can have 
+class Appointment:
+    def __init__(self, patient, doctor, appointment_date): #this line define the constructor for the class Appointment with all its attributes 
