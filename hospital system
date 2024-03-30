@@ -1,0 +1,2 @@
+#we start by creating a class patient with its unqiue attributes 
+class Patient:
