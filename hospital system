@@ -1,2 +1,2 @@
-#we start by creating a class patient with its unqiue attributes 
+#we start by creating a class patient with all the details/attributes a patient can have  
 class Patient:
