@@ -16,7 +16,6 @@ class Doctor:
         self.specialization = specialization
 
 
-
 #we then create a Appointment class showing attributes the appointment can have 
 class Appointment:
     def __init__(self, patient, doctor, appointment_date): #this line define the constructor for the class Appointment with all its attributes 
@@ -24,3 +23,21 @@ class Appointment:
         self.patient = patient
         self.doctor = doctor
         self.appointment_date = appointment_date
+
+
+#we create the class Prescription showing along all the attributes the Prescription can have
+class Prescription:
+    def __init__(self, patient, doctor, medication): #in this line we're defining the constructor for the class Prescription with all its attributes 
+#then we intalized the attributes of the class Prescription
+        self.patient = patient
+        self.doctor = doctor
+        self.medication = medication
+
+#we create the class Hospital with all the attributes the Hospital can have 
+class Hospital:
+    def __init__(self): #in this line we're defining the constructor for the class Hospital with all its attributes 
+#then we intalized the attributes of the class Hospital
+        self.patient_list = []
+        self.doctor_list = []
+        self.appointment_list = []
+        self.prescription_list = []
