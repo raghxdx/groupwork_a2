@@ -15,7 +15,18 @@ class HospitalTest:
 
 
 #we define a test case to update patient
-
+    def test_update_patient(self): #to test the update of the patients information
+        print("Testing updating a patient...") #this message would print to show the start of the tets
+        self.hospital.add_patient("Sara Mohamed", 25, "None", "Headache") #we add a patient named Sara Mohamed with the inital information
+        self.hospital.update_patient("Sara Mohamed", 26, "None", "Fever") #then we update the details of this patient
+        updated_patient = next((patient for patient in self.hospital.patient_list if patient.name == "Sara Mohamed"), None) #we find the newly updated patient within patient list of the hospital
+        if updated_patient: #this if statemnt checks if updated patient is found 
+#we assert the age and current location of the patient being updated 
+            assert updated_patient.age == 26
+            assert updated_patient.current_condition == "Fever"
+            print("Test passed.") #this print message shows we passed the test
+        else:
+            print("Patient not found.") #this print message shows that the patient wasnt found
 
 
 
