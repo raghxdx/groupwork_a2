@@ -41,3 +41,31 @@ class Hospital:
         self.doctor_list = []
         self.appointment_list = []
         self.prescription_list = []
+
+
+
+#we define the method to dispaly the options a menu can have 
+    def display_menu(self):
+        print("--- Patient Record Management System ---") #this line prints the title of the menu
+        print("1. Add Patient") #this line will print the 1st option of Add Patient
+        print("2. Update Patient") #this line will print the 2nd option of Update Patient
+        print("3. Remove Patient") #this line will print the 3rd option of Remove Patient
+        print("4. Add Doctor") #this line will print the 4th option of Add Doctor
+        print("5. Schedule Appointment") #this line will print the 5th option of Schedule Appointment
+        print("6. Issue Prescription") #this line will print the 6th option of Issue Prescription
+        print("7. Manage Consultation Queue") #this line will print the 7th option of Manage Consultation Queue
+        print("8. Exit") #this line will print the exit option
+
+
+#then we'll define a method to run the main loop of our program
+
+    def run(self):
+        while True: #this line will start the loop
+            self.display_menu() #here we called the display_menu method to display the menu 
+            choice = input("Enter your choice: ") #this is a promt for the user to enter the choice they want
+            if choice == '1': #if the users choice is 1 then we'll add the patient 
+                self.add_patient()
+
+
+
+
