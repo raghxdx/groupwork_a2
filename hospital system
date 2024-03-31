@@ -124,6 +124,99 @@ def add_patient(self):
         print("Patient not found.") #if the patient isnt found the message patient not found would be printed 
 
 
+#we define a method to add a doctor to the hospital system
+    def add_doctor(self):
+#we add a 'doctor' to our hospital system, and promt the user to enter the doctors name and specialization
+        print("\n--- Add Doctor ---") #this print message would show the start of 'add doctor'
+        name = input("Enter doctor name: ") #we promt users to enter the doctors name
+        specialization = input("Enter doctor specialization: ") #we promt user to enter the doctor specialization
+#then we create an object doctor with the given name and specialization
+        doctor = Doctor(name, specialization)
+        self.doctor_list.append(doctor) #we add the doctor to the list of doctors
+        print("Doctor added successfully.") #then we print this message to show its been successful 
+
+
+#we define a method to schedule an appointment within hospital system
+    def schedule_appointment(self):
+        print("\n--- Schedule Appointment ---") #this print statemnt would show  start of scheduling an appointment
+        patient_name = input("Enter patient name: ") #we promt user to enter patient name
+        doctor_name = input("Enter doctor name: ") #we promt user to enter doctor name
+        appointment_date = input("Enter appointment date: ") #we promt user to enter appointment date 
+
+        #then we look for the patient and doctor objects in their appropriate lists
+        patient = next((p for p in self.patient_list if p.name.lower() == patient_name.lower()), None) 
+        doctor = next((d for d in self.doctor_list if d.name.lower() == doctor_name.lower()), None)
+        
+        if patient and doctor: #this if statement checks if the patient and doctor both exist
+            appointment = Appointment(patient, doctor, appointment_date) #then we create an Appointment with the given patient and  doctor  and appointment date
+            self.appointment_list.append(appointment) #we add the appointment to our list of appointments
+            print("Appointment scheduled successfully.") #this print message would should a successful for the scheduling of appointment
+        else:
+            print("Patient or doctor not found.") #this message would print to show that either doctor or patient wasnt found
+
+#we define a method to issue a prescription
+    def issue_prescription(self):
+        print("\n--- Issue Prescription ---") #this message would print to show the start of issuing a prescription
+        patient_name = input("Enter patient name: ") #we promt the user to enter patient name
+        doctor_name = input("Enter doctor name: ") #we promt the user to enter doctor name 
+        medication = input("Enter medication: ") #we promt the user to enter medication
+
+        #we find the patient and doctor objects in their appropriate lists
+        patient = next((p for p in self.patient_list if p.name.lower() == patient_name.lower()), None)
+        doctor = next((d for d in self.doctor_list if d.name.lower() == doctor_name.lower()), None)
+
+        if patient and doctor: #this if statement checks if both patient and doctor exist
+            prescription = Prescription(patient, doctor, medication) #we create a rescription with the patient and doctor and medication
+            # Add the prescription to the list of prescriptions
+            self.prescription_list.append(prescription) #then we add it to the list of prescriptions
+            print("Prescription issued successfully.") #this print message shows a success of issuing  prescription
+        else:
+            print("Patient or doctor not found.") #this print message would show that either patient or doctor wasnt found
+
+
+#we define a method to  manage consultation queue
+def manage_consultation_queue(self):
+        if not self.appointment_list: #we check if the appointment list is empty or not 
+            # Print a message indicating that the consultation queue is empty
+            print("Consultation queue is empty.") #this message print would show that no one is in the que for appointments
+        else:
+            print("Consultation queue:") #otherwise we print this message to show the start of showing the appointments que 
+            for appointment in self.appointment_list: #we iterate through each appointments within the appointments list
+                # Print details of each appointment (patient name, doctor name, and appointment date)
+                print(f"Patient: {appointment.patient.name}, Doctor: {appointment.doctor.name}, Date: {appointment.appointment_date}") #we print the information for each appoitment to show the patient name and doctor name and appointment date 
+
+#we create an instance of the class Hospital 
+hospital = Hospital()
+#we promt the user to enter the username and password
+print("Enter username and password")
+username = input("Username: ")
+password = input("Password: ")
+
+#we then check to see if username and password match the credentials of the admin
+if username == "admin" and password == "password":
+    #if these credentials match then the hospital system can run
+    hospital.run()
+else:
+    #else credentials dont match we print a message to show that the password is wrong 
+    print("Wrong password")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
