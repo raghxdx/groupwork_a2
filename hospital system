@@ -114,6 +114,16 @@ def add_patient(self):
 
 #we define a method to remove a patient from the system
     def remove_patient(self):
+        print("\n--- Remove Patient ---") #this line will print a message to show the start of removing a patient
+        name = input("Enter patient name to remove: ") #this line prompts the user to enter the name of the patient to remove
+        for patient in self.patient_list: #this line iterates through the patient list
+            if patient.name.lower() == name.lower(): #if the patient is found:
+                self.patient_list.remove(patient) #we remove patient from patient list
+                print("Patient removed successfully.") #then we print this message to show the patient is removed successfully
+                return #we then exit the function
+        print("Patient not found.") #if the patient isnt found the message patient not found would be printed 
+
+
 
 
 
