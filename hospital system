@@ -64,8 +64,24 @@ class Hospital:
             self.display_menu() #here we called the display_menu method to display the menu 
             choice = input("Enter your choice: ") #this is a promt for the user to enter the choice they want
             if choice == '1': #if the users choice is 1 then we'll add the patient 
-                self.add_patient()
-
+                self.add_patient()  
+            elif choice == '2': #if the user chooses 2 then we update patient
+                self.update_patient()
+            elif choice == '3': #if user chooses 3 then we remove patient
+                self.remove_patient()
+            elif choice == '4': #if user chooses 4 then we add doctor
+                self.add_doctor()
+            elif choice == '5': #if user chooses 5 then we schedule an appointment
+                self.schedule_appointment()
+            elif choice == '6': #if user chooses 6 then we issue a prescription
+                self.issue_prescription()
+            elif choice == '7': #if user chooses 7 then we manage the consultation queue
+                self.manage_consultation_queue()
+            elif choice == '8': #if user chooses 8 then the system would exit 
+                print("Exiting the system. Goodbye!")
+                break #this line exits the loop
+            else:
+                print("Invalid choice. Please enter a number from 1 to 8.") #if no choice is valid then we inform the user to re choose a number from 1 to 8
 
 
 
