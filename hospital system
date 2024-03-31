@@ -121,7 +121,7 @@ def update_patient(self):
 
 
 #we define a method to remove a patient from the system
-    def remove_patient(self):
+def remove_patient(self):
         print("\n--- Remove Patient ---") #this line will print a message to show the start of removing a patient
         name = input("Enter patient name to remove: ") #this line prompts the user to enter the name of the patient to remove
         for patient in self.patient_list: #this line iterates through the patient list
@@ -133,7 +133,7 @@ def update_patient(self):
 
 
 #we define a method to add a doctor to the hospital system
-    def add_doctor(self):
+def add_doctor(self):
 #we add a 'doctor' to our hospital system, and promt the user to enter the doctors name and specialization
         print("\n--- Add Doctor ---") #this print message would show the start of 'add doctor'
         name = input("Enter doctor name: ") #we promt users to enter the doctors name
@@ -145,7 +145,7 @@ def update_patient(self):
 
 
 #we define a method to schedule an appointment within hospital system
-    def schedule_appointment(self):
+def schedule_appointment(self):
         print("\n--- Schedule Appointment ---") #this print statemnt would show  start of scheduling an appointment
         patient_name = input("Enter patient name: ") #we promt user to enter patient name
         doctor_name = input("Enter doctor name: ") #we promt user to enter doctor name
@@ -163,7 +163,7 @@ def update_patient(self):
             print("Patient or doctor not found.") #this message would print to show that either doctor or patient wasnt found
 
 #we define a method to issue a prescription
-    def issue_prescription(self):
+def issue_prescription(self):
         print("\n--- Issue Prescription ---") #this message would print to show the start of issuing a prescription
         patient_name = input("Enter patient name: ") #we promt the user to enter patient name
         doctor_name = input("Enter doctor name: ") #we promt the user to enter doctor name 
