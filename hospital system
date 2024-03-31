@@ -1,50 +1,49 @@
-#we start by creating a class patient with all the details/attributes a patient can have  
+#we start start by creating a class patient with all the details/attributes a patient can have
 class Patient:
-    def __init__(self, name, age, medical_history, current_condition): #this is the constrctur for the class Patient along its attributes 
-#then we intalize the class Patient attributes 
+    def __init__(self, name, age, medical_history, current_condition): #this is the constructor for the class Patient along its attributes
+        #then we initialize the class Patient attributes
         self.name = name
         self.age = age
         self.medical_history = medical_history
         self.current_condition = current_condition
 
 
-#we create the class Doctor with all  the details/attributes a doctor can have 
+#we create the class Doctor with all the details/attributes a doctor can have
 class Doctor:
-    def __init__(self, name, specialization): #this is the constrctur for the class Doctor along its attributes 
-#then we intalize the class Doctor attributes 
+    def __init__(self, name, specialization): #this is the constructor for the class Doctor along its attributes
+        #then we initialize the class Doctor attributes
         self.name = name
         self.specialization = specialization
 
 
-#we then create a Appointment class showing attributes the appointment can have 
+#we then create an Appointment class showing attributes the appointment can have
 class Appointment:
-    def __init__(self, patient, doctor, appointment_date): #this line define the constructor for the class Appointment with all its attributes 
-#after that we intalize the attributes of class Appointment 
+    def __init__(self, patient, doctor, appointment_date): #this line defines the constructor for the class Appointment with all its attributes
+        #after that we initialize the attributes of class Appointment
         self.patient = patient
         self.doctor = doctor
         self.appointment_date = appointment_date
 
 
-#we create the class Prescription showing along all the attributes the Prescription can have
+#we create the class Prescription showing all the attributes a Prescription can have
 class Prescription:
-    def __init__(self, patient, doctor, medication): #in this line we're defining the constructor for the class Prescription with all its attributes 
-#then we intalized the attributes of the class Prescription
+    def __init__(self, patient, doctor, medication): #in this line we're defining the constructor for the class Prescription with all its attributes
+        #then we initialize the attributes of the class Prescription
         self.patient = patient
         self.doctor = doctor
         self.medication = medication
 
-#we create the class Hospital with all the attributes the Hospital can have 
+
+#we create the class Hospital with all the attributes the Hospital can have
 class Hospital:
-    def __init__(self): #in this line we're defining the constructor for the class Hospital with all its attributes 
-#then we intalized the attributes of the class Hospital
+    def __init__(self): #in this line we're defining the constructor for the class Hospital with all its attributes
+        #then we initialize the attributes of the class Hospital
         self.patient_list = []
         self.doctor_list = []
         self.appointment_list = []
         self.prescription_list = []
 
-
-
-#we define the method to dispaly the options a menu can have 
+    #we define the method to display the options a menu can have
     def display_menu(self):
         print("--- Patient Record Management System ---") #this line prints the title of the menu
         print("1. Add Patient") #this line will print the 1st option of Add Patient
@@ -56,17 +55,14 @@ class Hospital:
         print("7. View Patient Records")  #this line will print the 7th option for the showing the patient records 
         print("8. Exit") #this line will print the exit option
 
-
-#we define a method for viewing the patient records
-    def view_patient_records(self): 
-
+    #we define a method for viewing the patient records
+    def view_patient_records(self):
         print("\n--- Patient Records ---")
         for patient in self.patient_list:
-            print(f"Name: {patient.name}, Age: {patient.age}, Medical History: {patient.medical_history}, Current Condition: {patient.current_condition}")
+            print(f"Name: {patient.name}, Age: {patient.age}, Medical History: {patient.medical_history}, "
+                  f"Current Condition: {patient.current_condition}")
 
-
-#then we'll define a method to run the main loop of our program
-
+    #we define a method to run the main loop of our program
     def run(self):
         while True: #this line will start the loop
             self.display_menu() #here we called the display_menu method to display the menu 
@@ -92,21 +88,22 @@ class Hospital:
                 print("Invalid choice. Please enter a number from 1 to 8.") #if no choice is valid then we inform the user to re choose a number from 1 to 8
 
 
-#we define a method to to add a new patient to the system
-def add_patient(self):
+    #we define a method to add a new patient to the system
+    def add_patient(self):
         print("\n--- Add Patient ---") #this line will print a message that would show the start of adding a patient
         name = input("Enter patient name: ") #this is the prompt for the user to enter patient name 
-        age = int(input("Enter patient age: ")) #this is the prompt for the user to enter patient age 
+        age = int(input("Enter patient age: "))  #this is the prompt for the user to enter patient age 
         medical_history = input("Enter medical history: ") #this is the prompt for the user to enter patient medical history
         current_condition = input("Enter current condition: ") #this is the prompt for the user to enter patient current condition
         patient = Patient(name, age, medical_history, current_condition) #this line creates a new 'patient' object with the given details by the user
         self.patient_list.append(patient) #this line will add the new patient to the patient list of the hospital
         print("Patient added successfully.") #then we finally print a message to show the user that the patient was added successfully 
 
-#we define a method to update the Patient details
-def update_patient(self):
-        print("\n--- Update Patient ---") #this line will print a message to show the start of 'Update Patient'
-        name = input("Enter patient name to update: ") #this promt asks the user to input the patient name that needs update
+
+    #we define a method to update the Patient details
+    def update_patient(self):
+        print("\n--- Update Patient ---")  #this line will print a message to show the start of 'Update Patient'
+        name = input("Enter patient name to update: ")  #this promt asks the user to input the patient name that needs update
         for patient in self.patient_list: #this line iterates through the patient list
             if patient.name.lower() == name.lower(): #if the patient is found:
                 age = int(input("Enter new age: ")) #then we prompt the user to enter the new age
@@ -119,12 +116,11 @@ def update_patient(self):
                 return #we exit this function
         print("Patient not found.") #if the Patient isnt found we print this message 
 
-
-#we define a method to remove a patient from the system
-def remove_patient(self):
-        print("\n--- Remove Patient ---") #this line will print a message to show the start of removing a patient
+    #we define a method to remove a patient from the system
+    def remove_patient(self):
+        print("\n--- Remove Patient ---")  #this line will print a message to show the start of removing a patient
         name = input("Enter patient name to remove: ") #this line prompts the user to enter the name of the patient to remove
-        for patient in self.patient_list: #this line iterates through the patient list
+        for patient in self.patient_list:  #this line iterates through the patient list
             if patient.name.lower() == name.lower(): #if the patient is found:
                 self.patient_list.remove(patient) #we remove patient from patient list
                 print("Patient removed successfully.") #then we print this message to show the patient is removed successfully
@@ -132,38 +128,37 @@ def remove_patient(self):
         print("Patient not found.") #if the patient isnt found the message patient not found would be printed 
 
 
-#we define a method to add a doctor to the hospital system
-def add_doctor(self):
+    #we define a method to add a doctor to the hospital system
+    def add_doctor(self):
 #we add a 'doctor' to our hospital system, and promt the user to enter the doctors name and specialization
         print("\n--- Add Doctor ---") #this print message would show the start of 'add doctor'
         name = input("Enter doctor name: ") #we promt users to enter the doctors name
-        specialization = input("Enter doctor specialization: ") #we promt user to enter the doctor specialization
+        specialization = input("Enter doctor specialization: ")
+        doctor = Doctor(name, specialization) #we promt user to enter the doctor specialization
 #then we create an object doctor with the given name and specialization
-        doctor = Doctor(name, specialization)
         self.doctor_list.append(doctor) #we add the doctor to the list of doctors
         print("Doctor added successfully.") #then we print this message to show its been successful 
 
-
-#we define a method to schedule an appointment within hospital system
-def schedule_appointment(self):
+    #we define a method to schedule an appointment within the hospital system
+    def schedule_appointment(self):
         print("\n--- Schedule Appointment ---") #this print statemnt would show  start of scheduling an appointment
         patient_name = input("Enter patient name: ") #we promt user to enter patient name
         doctor_name = input("Enter doctor name: ") #we promt user to enter doctor name
         appointment_date = input("Enter appointment date: ") #we promt user to enter appointment date 
 
         #then we look for the patient and doctor objects in their appropriate lists
-        patient = next((p for p in self.patient_list if p.name.lower() == patient_name.lower()), None) 
+        patient = next((p for p in self.patient_list if p.name.lower() == patient_name.lower()), None)
         doctor = next((d for d in self.doctor_list if d.name.lower() == doctor_name.lower()), None)
-        
+
         if patient and doctor: #this if statement checks if the patient and doctor both exist
             appointment = Appointment(patient, doctor, appointment_date) #then we create an Appointment with the given patient and  doctor  and appointment date
             self.appointment_list.append(appointment) #we add the appointment to our list of appointments
-            print("Appointment scheduled successfully.") #this print message would should a successful for the scheduling of appointment
+            print("Appointment scheduled successfully.") #this message would print to show that either doctor or patient wasnt found
         else:
-            print("Patient or doctor not found.") #this message would print to show that either doctor or patient wasnt found
+            print("Patient or doctor not found.")
 
-#we define a method to issue a prescription
-def issue_prescription(self):
+    #we define a method to issue a prescription
+    def issue_prescription(self): 
         print("\n--- Issue Prescription ---") #this message would print to show the start of issuing a prescription
         patient_name = input("Enter patient name: ") #we promt the user to enter patient name
         doctor_name = input("Enter doctor name: ") #we promt the user to enter doctor name 
@@ -175,27 +170,16 @@ def issue_prescription(self):
 
         if patient and doctor: #this if statement checks if both patient and doctor exist
             prescription = Prescription(patient, doctor, medication) #we create a rescription with the patient and doctor and medication
-            # Add the prescription to the list of prescriptions
             self.prescription_list.append(prescription) #then we add it to the list of prescriptions
             print("Prescription issued successfully.") #this print message shows a success of issuing  prescription
         else:
             print("Patient or doctor not found.") #this print message would show that either patient or doctor wasnt found
 
 
-#we define a method to  manage consultation queue
-def manage_consultation_queue(self):
-        if not self.appointment_list: #we check if the appointment list is empty or not 
-            # Print a message indicating that the consultation queue is empty
-            print("Consultation queue is empty.") #this message print would show that no one is in the que for appointments
-        else:
-            print("Consultation queue:") #otherwise we print this message to show the start of showing the appointments que 
-            for appointment in self.appointment_list: #we iterate through each appointments within the appointments list
-                # Print details of each appointment (patient name, doctor name, and appointment date)
-                print(f"Patient: {appointment.patient.name}, Doctor: {appointment.doctor.name}, Date: {appointment.appointment_date}") #we print the information for each appoitment to show the patient name and doctor name and appointment date 
-
-#we create an instance of the class Hospital 
+#we create an instance of the class Hospital
 hospital = Hospital()
-#we promt the user to enter the username and password
+
+#we prompt the user to enter the username and password
 print("Enter username and password")
 username = input("Username: ")
 password = input("Password: ")
@@ -205,27 +189,5 @@ if username == "admin" and password == "password":
     #if these credentials match then the hospital system can run
     hospital.run()
 else:
-    #else credentials dont match we print a message to show that the password is wrong 
+    #else these credentials don't match we print a message to show that the password is wrong
     print("Wrong password")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
