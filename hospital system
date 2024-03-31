@@ -104,7 +104,7 @@ def add_patient(self):
         print("Patient added successfully.") #then we finally print a message to show the user that the patient was added successfully 
 
 #we define a method to update the Patient details
-    def update_patient(self):
+def update_patient(self):
         print("\n--- Update Patient ---") #this line will print a message to show the start of 'Update Patient'
         name = input("Enter patient name to update: ") #this promt asks the user to input the patient name that needs update
         for patient in self.patient_list: #this line iterates through the patient list
