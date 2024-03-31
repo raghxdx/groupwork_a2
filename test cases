@@ -1,1 +1,23 @@
+#test cases for adding and updating and removing patient details
 
+#we start by creting a class named 'HospitalTest'
+class HospitalTest:
+    def __init__(self):
+#then we create an instance of the class hospital
+        self.hospital = Hospital()  
+
+#we define a test case to add patient 
+    def test_add_patient(self): #this would test the adding of a patient to the hospitals patient list
+        print("Testing adding a patient...")
+        self.hospital.add_patient("Sara Khalid", 29, "None", "Fever") #we create a new patient to add with its unique details
+        assert "Sara Khalid" in [patient.name for patient in self.hospital.patient_list] #we check if this patient was added 
+        print("Test passed.") #this message would print to show that this test case was sucessful 
+
+
+#we define a test case to update patient
+
+
+
+
+
+#we define a test case to remove patient
