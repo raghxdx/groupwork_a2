@@ -53,8 +53,16 @@ class Hospital:
         print("4. Add Doctor") #this line will print the 4th option of Add Doctor
         print("5. Schedule Appointment") #this line will print the 5th option of Schedule Appointment
         print("6. Issue Prescription") #this line will print the 6th option of Issue Prescription
-        print("7. Manage Consultation Queue") #this line will print the 7th option of Manage Consultation Queue
+        print("7. View Patient Records")  #this line will print the 7th option for the showing the patient records 
         print("8. Exit") #this line will print the exit option
+
+
+#we define a method for viewing the patient records
+    def view_patient_records(self): 
+
+        print("\n--- Patient Records ---")
+        for patient in self.patient_list:
+            print(f"Name: {patient.name}, Age: {patient.age}, Medical History: {patient.medical_history}, Current Condition: {patient.current_condition}")
 
 
 #then we'll define a method to run the main loop of our program
@@ -75,8 +83,8 @@ class Hospital:
                 self.schedule_appointment()
             elif choice == '6': #if user chooses 6 then we issue a prescription
                 self.issue_prescription()
-            elif choice == '7': #if user chooses 7 then we manage the consultation queue
-                self.manage_consultation_queue()
+            elif choice == '7': #if user chooses 7 then we manage the option to view patient records
+                self.view_patient_records()
             elif choice == '8': #if user chooses 8 then the system would exit 
                 print("Exiting the system. Goodbye!")
                 break #this line exits the loop
