@@ -95,7 +95,25 @@ def add_patient(self):
         self.patient_list.append(patient) #this line will add the new patient to the patient list of the hospital
         print("Patient added successfully.") #then we finally print a message to show the user that the patient was added successfully 
 
+#we define a method to update the Patient details
+    def update_patient(self):
+        print("\n--- Update Patient ---") #this line will print a message to show the start of 'Update Patient'
+        name = input("Enter patient name to update: ") #this promt asks the user to input the patient name that needs update
+        for patient in self.patient_list: #this line iterates through the patient list
+            if patient.name.lower() == name.lower(): #if the patient is found:
+                age = int(input("Enter new age: ")) #then we prompt the user to enter the new age
+                medical_history = input("Enter new medical history: ") #then another promt for the user to enter the new medical history
+                current_condition = input("Enter new current condition: ") #then another promt for the user to enter the new current condition
+                patient.age = age #this line updates the patients age 
+                patient.medical_history = medical_history #this line updates the medical history
+                patient.current_condition = current_condition #this line updates  the current condition
+                print("Patient details updated successfully.") #then we print this message to show the patients details have been updated successfully
+                return #we exit this function
+        print("Patient not found.") #if the Patient isnt found we print this message 
 
+
+#we define a method to remove a patient from the system
+    def remove_patient(self):
 
 
 
