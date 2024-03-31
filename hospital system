@@ -84,4 +84,19 @@ class Hospital:
                 print("Invalid choice. Please enter a number from 1 to 8.") #if no choice is valid then we inform the user to re choose a number from 1 to 8
 
 
+#we define a method to to add a new patient to the system
+def add_patient(self):
+        print("\n--- Add Patient ---") #this line will print a message that would show the start of adding a patient
+        name = input("Enter patient name: ") #this is the prompt for the user to enter patient name 
+        age = int(input("Enter patient age: ")) #this is the prompt for the user to enter patient age 
+        medical_history = input("Enter medical history: ") #this is the prompt for the user to enter patient medical history
+        current_condition = input("Enter current condition: ") #this is the prompt for the user to enter patient current condition
+        patient = Patient(name, age, medical_history, current_condition) #this line creates a new 'patient' object with the given details by the user
+        self.patient_list.append(patient) #this line will add the new patient to the patient list of the hospital
+        print("Patient added successfully.") #then we finally print a message to show the user that the patient was added successfully 
+
+
+
+
+
 
